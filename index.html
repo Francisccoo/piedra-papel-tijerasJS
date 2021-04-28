@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Piedra Papel Tijeras</title>
+
+  <link rel="stylesheet" href="styles2.css">  
+</head>
+<body>
+  <h1>¡El juego de Piedra-Papel-Tijeras!</h1>
+  
+  <div id="container">
+  
+
+  
+  <div id="ladoIzquierdo">
+    <div id="piedra" class="box" onclick="escoger(this, event)">
+      <div id="figura1"></div>
+    </div>
+    <div id="papel" class="box" onclick="escoger(this, event)">
+      <div id="figura2"></div>
+    </div>
+    <div id="tijera" class="box" onclick="escoger(this, event)">
+      <div id="figura3">X</div>
+    </div>
+  </div>
+
+
+ <div id="ladoCentral">
+    <button onclick="jugar()">JUGAR</button>
+     <br>
+     <br>
+     <button onclick="reiniciar()">REINICIAR</button>
+  </div>
+  
+  
+  <div id="ladoDerecho">
+    <div id="piedraCOM" class="box hide">
+      <div id="figura1"></div>
+    </div>
+    <div id="papelCOM" class="box hide">
+      <div id="figura2"></div>
+    </div>
+    <div id="tijeraCOM" class="box hide">
+      <div id="figura3">X</div>
+    </div>
+  </div>
+    
+  </div>
+  <span id="textoResultado"></span>
+
+  <script type="text/javascript" src="index3.js"></script>
+</body>
+</html>
