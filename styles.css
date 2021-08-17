@@ -1,0 +1,204 @@
+:root {
+  margin: 0;
+  padding: 0;
+  --blue: rgb(3, 169, 244);
+  --grey : rgb(96, 125, 139);
+  --white: rgb(255, 255, 255);
+  --green: rgb(76, 175, 8);
+  --orange: rgb(255, 152, 0);
+  --white:  rgb(255 , 255, 255);
+  --red:  rgba(244, 67, 54);
+}
+
+/* GENERAL */
+
+header {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+body {
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hide {
+  visibility: hidden;
+}
+
+span {
+  font-size: 30px;
+}
+
+/* SCORE-BOARD */
+
+.score__board {
+  display: flex;
+    margin: auto;
+    border-radius: 20px;
+    background-color: var(--blue);
+}
+
+.scoreboard__content {
+  margin: 15px;
+    text-align: center;
+}
+
+.score__title {
+  margin: 5px;
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.board {
+    width: 80px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    margin: auto;    
+    border-radius: 10px;
+}
+
+.victories {
+  background-color: var(--green);
+}
+
+.draws {
+ background-color: var(--orange); 
+}
+
+.defeats {
+ background-color: var(--red); 
+}
+
+.board-txt {
+    margin: 0;
+    padding: 0;
+    font-size: 40px;
+    color: var(--pink);
+}
+
+.game__board {
+  display: flex;
+  width: 100%;
+  height: auto;
+}
+
+/* DISPLAY ZONES  */
+
+.player__zone, .button__zone, .computer__zone {
+  width: 30%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* BUTTONS */
+
+
+.btn {
+    border-radius: 10px;
+    background-color: var(--blue);
+    border: none;
+    outline: 0;
+    box-shadow: inset 0 -5px rgb(0 0 0 / 20%);
+    cursor: pointer;
+    transition: 0.2s;
+    will-change: transform;
+    color:  var(--white);
+}
+
+.btn__rock, .btn__paper, .btn__scissors, .btn__play, .btn__reboot {
+
+    width: 150px;
+    height: auto;
+    padding: 20px 0 20px 0;
+    margin-top: 10px;
+
+}
+
+.btn__active {
+  background-color: var(--green);
+  opacity: 1;
+}
+
+.btn__play {
+  background-color: var(--green);
+}
+
+.btn__reboot {
+ background-color: var(--orange); 
+}
+
+.btn__com {
+  background-color: var(--grey);;
+}
+
+
+/* POPUP MESSAGE */
+
+#box__shadow {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;  
+  z-index: 2;
+}
+
+.box__message {
+
+  width: 50%;
+  height: 50%;
+  background-color: white;
+  border-radius: 10px;
+  position: absolute;
+  left: 25%;
+  top: 25%;
+
+font-size: 2rem;
+text-align: center;
+}
+
+
+/* ICONS */
+
+.icon {
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-image: url(fonts/sprite_white.svg); /* To show white icons */
+  /*background-image: url(fonts/sprite_black.svg); /* To show black icons */ 
+  width: 32px;
+  height: 32px;
+}
+
+.icon-file-empty {  
+  background-position: 0 0;
+}
+.icon-spinner11 {
+  background-position: -48px 0;
+}
+.icon-play3 {
+  background-position: -96px 0;
+  color: var(--white);
+}
+.icon-scissors {
+  background-position: -144px 0;
+}
+.icon-github {
+  background-position: -192px 0;
+}
+.icon-basecamp {
+  background-position: -240px 0;
+}
+
+
+
