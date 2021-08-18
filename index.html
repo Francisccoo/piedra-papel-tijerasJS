@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Piedra Papel Tijeras</title>
 
-  <link rel="stylesheet" href="styles.css">  
+  <link rel="stylesheet" href="styles.css">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
+
 <body>
 
   <!-- POPUP MESSAGE -->
@@ -16,45 +18,45 @@
     <div class="box__message">
       <p>Ya has jugado la partida, por favor reinicia el juego</p>
       <button type="button" class="btn btn__paper" onclick="hide__message()">
-        <span>Aceptar</span>  
+        <span>Aceptar</span>
       </button>
 
     </div>
   </section>
 
-<header>
-  <section class="title__game">
-    <div>
-      <h1>Piedra-Papel-Tijeras</h1>
-    </div>  
-  </section> 
-    
-<!-- SCORE BOARD SECTION -->
+  <header>
+    <section class="title__game">
+      <div>
+        <h1>Piedra-Papel-Tijeras</h1>
+      </div>
+    </section>
 
-  <section class="score__board">
-    <div class="scoreboard__content">
-      <p class="score__title">Victorias:</p>
-      <div class="board victories">
-            <p id="score__victories" class="board-txt">0</p>
-            <p id="score-point" class="score-overlay"></p>
-          </div>
-    </div>
-    <div class="scoreboard__content">
-      <p class="score__title">Empates:</p>
-      <div class="board draws">
-            <p id="score__draws" class="board-txt">0</p>
-            <p id="score-point" class="score-overlay"></p>
-          </div>
-    </div>
-    <div class="scoreboard__content">
-      <p class="score__title">Derrotas:</p>
-      <div class="board defeats">
-            <p id="score__defeats" class="board-txt">0</p>
-            <p id="score-point" class="score-overlay"></p>
-          </div>
-    </div>
+    <!-- SCORE BOARD SECTION -->
 
-    <!--
+    <section class="score__board">
+      <div class="scoreboard__content">
+        <p class="score__title">Victorias:</p>
+        <div class="board victories">
+          <p id="score__victories" class="board-txt">0</p>
+          <p id="score-point" class="score-overlay"></p>
+        </div>
+      </div>
+      <div class="scoreboard__content">
+        <p class="score__title">Empates:</p>
+        <div class="board draws">
+          <p id="score__draws" class="board-txt">0</p>
+          <p id="score-point" class="score-overlay"></p>
+        </div>
+      </div>
+      <div class="scoreboard__content">
+        <p class="score__title">Derrotas:</p>
+        <div class="board defeats">
+          <p id="score__defeats" class="board-txt">0</p>
+          <p id="score-point" class="score-overlay"></p>
+        </div>
+      </div>
+
+      <!--
   </section>
   <section class="github__zone">
     <div>
@@ -63,55 +65,63 @@
     </div>    
   </section>
 -->
-</header>
+  </header>
 
-<!-- GAME SECTION | PLAYER SECTION -->
+  <!-- GAME SECTION | PLAYER SECTION -->
 
-<main class="game__board">
-  <section class="player__zone">
+  <main class="game__board">
+    <section class="player__zone">
 
-    <button type="button" id="rock" class="btn btn__rock" onclick="choose(this, event)">
-      <span class="icon icon-basecamp"></span>  
-    </button>
+      <button type="button" id="rock" class="btn btn__rock" onclick="choose(this, event)">
+        <span class="icon icon-basecamp"></span>
+      </button>
 
-     <button type="button" id="paper" class="btn btn__paper" onclick="choose(this, event)">
-      <span class="icon icon-file-empty"></span>  
-    </button>
+      <button type="button" id="paper" class="btn btn__paper" onclick="choose(this, event)">
+        <span class="icon icon-file-empty"></span>
+      </button>
 
-     <button type="button" id="scissors" class="btn btn__scissors" onclick="choose(this, event)">
-      <span class="icon icon-scissors"></span>  
-    </button>
-    
-  </section>
+      <button type="button" id="scissors" class="btn btn__scissors" onclick="choose(this, event)">
+        <span class="icon icon-scissors"></span>
+      </button>
 
-  <!-- GAME SECTION | BUTTONS -->
+    </section>
 
-  <section class="button__zone">
-    <button type="button" id="play" class="btn btn__play" onclick="play__game()">
-      <span class="icon icon-play3"></span>
-    </button>
-    
-    <button type="button" id="reboot" class="btn btn__reboot" onclick="reboot()">
-      <span class="icon icon-spinner11"></span>
-    </button>
-  </section>
-  
-  <!-- GAME SECTION | COM SECTION -->
+    <!-- GAME SECTION | BUTTONS -->
 
-  <section class="computer__zone">
-    <button type="button" id="rock__com" class="btn btn__rock btn__com hide">
-        <span class="icon icon-basecamp"></span>  
+    <section class="button__zone">
+      <button type="button" id="play" class="btn btn__play" onclick="play__game()">
+        <span class="icon icon-play3"></span>
+      </button>
+
+      <button type="button" id="reboot" class="btn btn__reboot" onclick="reboot()">
+        <span class="icon icon-spinner11"></span>
+      </button>
+    </section>
+
+    <!-- GAME SECTION | COM SECTION -->
+
+    <section class="computer__zone">
+      <button type="button" id="rock__com" class="btn btn__rock btn__com hide">
+        <span class="icon icon-basecamp"></span>
       </button>
       <button type="button" id="paper__com" class="btn btn__paper btn__com hide">
-        <span class="icon icon-file-empty"></span>  
+        <span class="icon icon-file-empty"></span>
       </button>
       <button type="button" id="scissors__com" class="btn btn__scissors btn__com hide">
-        <span class="icon icon-scissors"></span>  
+        <span class="icon icon-scissors"></span>
       </button>
-  </section>
-  
-</main>
-  <script type="text/javascript" src="script.js">
-  </script>
+    </section>
+
+  </main>
+
+  <!-- SweetAlert error message handling script -->
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+
+  <!-- The execution order and linking of scripts are important -->
+  <script type="text/javascript" src="script.js"></script>
+
+
 </body>
+
 </html>

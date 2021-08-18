@@ -19,31 +19,33 @@ play.style.opacity = "0.5";
 
 const box__shadow = document.getElementById("box__shadow");
 
-let victories = 0,     
-    draws = 0,    
-    defeats = 0
-    
+let victories = 0,
+  draws = 0,
+  defeats = 0
+
+
+// 1ª función - controlar la elección y lógica de los botones
 
 function choose(btnEle, evt) {
   // btnEle => El botón | evt => evento/acción => 'click'
 
-  if (btnEle === rock) {    
+  if (btnEle === rock) {
     user = "r";
     btnEle.classList.add("btn__active");
-      
+
     paper.classList.remove("btn__active");
     scissors.classList.remove("btn__active");
-      
-  } else if (btnEle === paper) {    
+
+  } else if (btnEle === paper) {
     user = "p";
 
     btnEle.classList.add("btn__active");
 
     rock.classList.remove("btn__active");
     scissors.classList.remove("btn__active");
-    
-    
-  } else if (btnEle === scissors) {    
+
+
+  } else if (btnEle === scissors) {
     user = "s";
 
     btnEle.classList.add("btn__active");
@@ -57,56 +59,60 @@ function choose(btnEle, evt) {
 
 }
 
-function play__game() {  
-  if (!played) {
-      let random__number = Math.round(Math.random() * (2 - 0) + 0);
+// 2ª Función - Control de flujo del juego (CPU aleatoria, marcador de VDE (victorias, derrotas, empates, etc.))
 
-      const computer = ["r", "p", "s"];
-      
-      text__victories = document.getElementById("score__victories");
-      text__draws = document.getElementById("score__draws");
-      text__defeats = document.getElementById("score__defeats");
+function play__game() {
+  if (!played) { // Si todavia no hemos jugado ...
+    let random__number = Math.round(Math.random() * (2 - 0) + 0);
 
-      switch (random__number) {
-        case 0:
-          computer[0];
-          rock__com.classList.remove("hide");
-          break;
-        case 1:
-          computer[1];
-          paper__com.classList.remove("hide");
-          break;
-        case 2:
-          computer[2];
-          scissors__com.classList.remove("hide");
-          break;
-        default:
-          alert("Por favor, reinicia el juego");
-      }
+    const computer = ["r", "p", "s"];
 
-      if (user === computer[random__number]) {    
-        draws++;
-        text__draws.innerHTML = draws;
-        played = true;
-        return; //No continua comprovando
-      }
+    text__victories = document.getElementById("score__victories");
+    text__draws = document.getElementById("score__draws");
+    text__defeats = document.getElementById("score__defeats");
 
-      if (winner(user, computer[random__number])) {
-        victories++;
-      	text__victories.innerHTML = victories;
-        played = true;        
-        return; //No continua comprovando
-      }
-          
-      defeats++;
-      text__defeats.innerHTML = defeats;
-      played = true;
-    } else {
-      //alert("Ya has jugado la partida, por favor reinicia el juego");
-      show__message();
+    switch (random__number) {
+      case 0:
+        computer[0];
+        rock__com.classList.remove("hide");
+        break;
+      case 1:
+        computer[1];
+        paper__com.classList.remove("hide");
+        break;
+      case 2:
+        computer[2];
+        scissors__com.classList.remove("hide");
+        break;
+      default:
+        alert("Por favor, reinicia el juego");
     }
-  
+
+    if (user === computer[random__number]) {
+      draws++;
+      text__draws.innerHTML = draws;
+      played = true;
+      return; //No continua comprovando
+    }
+
+    if (winner(user, computer[random__number])) {
+      victories++;
+      text__victories.innerHTML = victories;
+      played = true;
+      return; //No continua comprovando
+    }
+
+    defeats++;
+    text__defeats.innerHTML = defeats;
+    played = true;
+  } else { // Si ya hemos jugado
+    //alert("Ya has jugado la partida, por favor reinicia el juego");
+    show__message();
+  }
+
 }
+
+// 3ª Función - comprovar si hemos ganado, perdido o empatado
 
 function winner(player, opponent) {
   if (
@@ -120,8 +126,10 @@ function winner(player, opponent) {
   }
 }
 
+// 4ª Función - Reiniciar el juego
+
 function reboot(activeElements) {
-  
+
   rock__com.classList.add("hide");
   paper__com.classList.add("hide");
   scissors__com.classList.add("hide");
@@ -133,19 +141,34 @@ function reboot(activeElements) {
   rock.classList.remove("btn__active");
   paper.classList.remove("btn__active");
   scissors.classList.remove("btn__active");
-  
+
 }
+
+// 5ª Función - Mostrar mensaje para reiniciar el juego
 
 function show__message() {
-  
+
+  /*
   box__shadow.style.display = "block";
-  box__shadow.classList.add("animate__fadeInDown");    
-  box__shadow.classList.remove("animate__fadeOutUp");    
+  box__shadow.classList.add("animate__fadeInDown");
+  box__shadow.classList.remove("animate__fadeOutUp");
+  */
+
+
+  swal({
+    title: "Alto!",
+    text: "Ya has jugado una partida, por favor reinicia el juego",
+    icon: "error",
+    button: "Aceptar",
+  });
+
 }
 
-function hide__message() {  
-  
-  box__shadow.classList.remove("animate__fadeInDown");    
-  box__shadow.classList.add("animate__fadeOutUp");    
-  
+/*
+function hide__message() {
+
+  box__shadow.classList.remove("animate__fadeInDown");
+  box__shadow.classList.add("animate__fadeOutUp");
+
 }
+*/
