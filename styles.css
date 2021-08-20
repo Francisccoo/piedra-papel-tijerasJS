@@ -156,7 +156,7 @@ span {
 }
 
 .btn__play {
-  background-color: var(--green);
+  background-color: var(--red);
 }
 
 .btn__reboot {
