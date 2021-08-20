@@ -10,6 +10,31 @@
   --red:  rgba(244, 67, 54);
 }
 
+/* MOBILE VERSION */
+
+@media only screen and (max-width: 360px) {
+  
+  .title__game {
+    display: none;
+  }
+  
+  .game__board {
+    margin: 20%;
+  }
+
+  .scoreboard__content {
+    margin: 10px !important;    
+  }
+
+  .game__board {
+    flex-direction: column;
+  }
+
+  .swal-text {
+    text-align: center;
+  }
+}
+
 /* GENERAL */
 
 header {
