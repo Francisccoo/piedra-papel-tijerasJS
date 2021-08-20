@@ -67,9 +67,17 @@ function play__game() {
 
     const computer = ["r", "p", "s"];
 
+    // Score for mobile-portrait orientation, desktop and tablet
+
     text__victories = document.getElementById("score__victories");
     text__draws = document.getElementById("score__draws");
     text__defeats = document.getElementById("score__defeats");
+
+    // Score for mobile-landscape orientation
+
+    text__victories = document.getElementById("score__victoriesMP");
+    text__draws = document.getElementById("score__drawsMP");
+    text__defeats = document.getElementById("score__defeatsMP");
 
     switch (random__number) {
       case 0:
