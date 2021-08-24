@@ -67,17 +67,22 @@ function play__game() {
 
     const computer = ["r", "p", "s"];
 
-    // Score for mobile-portrait orientation, desktop and tablet
+    // Check if device is orientated landscape or portrait
 
-    text__victories = document.getElementById("score__victories");
-    text__draws = document.getElementById("score__draws");
-    text__defeats = document.getElementById("score__defeats");
+    if (window.innerHeight > window.innerWidth) {
+      // Score for mobile-portrait orientation, desktop and tablet
 
-    // Score for mobile-landscape orientation
+      text__victories = document.getElementById("score__victories");
+      text__draws = document.getElementById("score__draws");
+      text__defeats = document.getElementById("score__defeats");
+    }
+    else {
+      // Score for mobile-landscape orientation
 
-    text__victories = document.getElementById("score__victoriesMP");
-    text__draws = document.getElementById("score__drawsMP");
-    text__defeats = document.getElementById("score__defeatsMP");
+      text__victories = document.getElementById("score__victoriesMP");
+      text__draws = document.getElementById("score__drawsMP");
+      text__defeats = document.getElementById("score__defeatsMP");
+    }
 
     switch (random__number) {
       case 0:

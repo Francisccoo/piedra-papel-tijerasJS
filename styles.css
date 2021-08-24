@@ -81,6 +81,10 @@
 
 /* GENERAL */
 
+.whiteColor {
+  color: var(--white);
+}
+
 header {
   width: 100%;
   height: auto;
@@ -241,37 +245,6 @@ text-align: center;
 
 /* ICONS - ICOMOON */
 
-/* LOADED FROM A SVG FILE */
-
-.icon {
-  display: inline-block;
-  background-repeat: no-repeat;
-  background-image: url(fonts/sprite_white.svg); /* To show white icons */
-  /*background-image: url(fonts/sprite_black.svg); /* To show black icons */ 
-  width: 32px;
-  height: 32px;
-}
-
-.icon-file-empty {  
-  background-position: 0 0;
-}
-.icon-spinner11 {
-  background-position: -48px 0;
-}
-.icon-play3 {
-  background-position: -96px 0;
-  color: var(--white);
-}
-.icon-scissors {
-  background-position: -144px 0;
-}
-.icon-github {
-  background-position: -192px 0;
-}
-.icon-basecamp {
-  background-position: -240px 0;
-}
-
 /* FONT FILES LINKED AND LOADED */
 
 @font-face {
@@ -301,6 +274,12 @@ text-align: center;
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-file-empty:before {
+  content: "\e924";
+}
+.icon-spinner11:before {
+  content: "\e984";
+}
 .icon-happy:before {
   content: "\e9df";
 }
@@ -309,6 +288,15 @@ text-align: center;
 }
 .icon-crying:before {
   content: "\ea01";
+}
+.icon-play3:before {
+  content: "\ea1c";
+}
+.icon-scissors:before {
+  content: "\ea5a";
+}
+.icon-basecamp:before {
+  content: "\eab2";
 }
 
 
