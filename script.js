@@ -67,17 +67,19 @@ function play__game() {
 
     const computer = ["r", "p", "s"];
 
-    // Check if device is orientated landscape or portrait
+    // Comprueba si el dispositivo está orientado en modo horizontal o vertical
 
     if (window.innerHeight > window.innerWidth) {
-      // Score for mobile-portrait orientation, desktop and tablet
+      // Puntuación para dispositivos móviles en orientación vertical,
+      // navegadores de escritorio y tablets
+
 
       text__victories = document.getElementById("score__victories");
       text__draws = document.getElementById("score__draws");
       text__defeats = document.getElementById("score__defeats");
     }
     else {
-      // Score for mobile-landscape orientation
+      // Puntuación para dispositivos móviles en orientación horizontal
 
       text__victories = document.getElementById("score__victoriesMP");
       text__draws = document.getElementById("score__drawsMP");
