@@ -11,9 +11,6 @@ const scissors__com = document.getElementById("scissors__com");
 
 const play = document.getElementById("play");
 
-const green__color = "rgb(76, 175, 8)";
-const blue__color = "rgb(3, 169, 244)";
-
 play.disabled = true;
 play.style.opacity = "0.5";
 

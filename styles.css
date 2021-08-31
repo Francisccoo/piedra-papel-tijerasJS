@@ -10,9 +10,9 @@
   --red:  rgba(244, 67, 54);
 }
 
-/* MOBILE VERSION */
+/* MOBILE VERSION - DEVICES */
 
-/* PORTRAIT */
+/* GALAXY NOTE 3 and S5 and S9/S9+ PORTRAIT */
 
 @media only screen and (max-width: 360px) {
   
@@ -47,13 +47,56 @@
   }
 }
 
+/* iPhone 6/7/8 and X/XS - PORTRAIT */
+
+@media only screen and (max-width: 375px) {
+  .game__board {
+    flex-direction: column;
+  }
+}
+
+/* iPad - PORTRAIT */
+
+@media only screen and (max-width: 768px) {
+   .title__game {
+    display: none;
+  }
+
+   header section:nth-of-type(3) {
+    display: none !important;
+  }
+}
+
+/* iPhone 6/7/8 PLUS - PORTRAIT MODE */
+
+@media only screen and (max-width: 414px) {
+  .game__board {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-height: 414px) {
+  .score__board {
+    display: none !important;
+  }
+
+  header section:nth-of-type(3) {
+    display: inline !important;
+  }
+}
+
+
+
+/*
 @media only screen and (min-width: 360px) {
   header section:nth-of-type(3) {
     display: none !important;
   }
 }
+*/
 
-/* LANDSCAPE */
+
+/* GALAXY NOTE 3 and S5 and S9/S9+ - LANDSCAPE */
 
 
 @media only screen and (max-height: 360px) {
@@ -70,13 +113,40 @@
     display: inline !important;
   }
 
-  
   .game__board {
     margin: 0 !important;
   }
-  
-
 }
+
+/* iPad - LANDSCAPE */
+
+@media only screen and (max-height: 1024px) {
+   
+   header section:nth-of-type(3) {
+    display: none !important;
+  }
+}
+
+
+/* iPhone 6/7/8 - LANDSCAPE */
+
+@media only screen and (max-height: 375px) {
+
+  .title__game {
+    display: none;
+  }
+
+  .score__board {
+    display: none !important;
+  }
+
+  header section:nth-of-type(3) {
+    display: inline !important;
+  }
+}
+
+
+
 
 
 /* GENERAL */
