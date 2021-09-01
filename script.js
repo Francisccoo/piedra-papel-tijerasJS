@@ -14,11 +14,22 @@ const play = document.getElementById("play");
 play.disabled = true;
 play.style.opacity = "0.5";
 
-const box__shadow = document.getElementById("box__shadow");
+//const box__shadow = document.getElementById("box__shadow");
 
 let victories = 0,
   draws = 0,
   defeats = 0
+
+
+// Puntuación para orientación vertical
+const text__victories = document.getElementById("score__victories");
+const text__draws = document.getElementById("score__draws");
+const text__defeats = document.getElementById("score__defeats");
+
+// Puntuación para orientación horizontal
+const text__victoriesMP = document.getElementById("score__victoriesMP");
+const text__drawsMP = document.getElementById("score__drawsMP");
+const text__defeatsMP = document.getElementById("score__defeatsMP");
 
 
 // 1ª función - controlar la elección y lógica de los botones
@@ -64,25 +75,6 @@ function play__game() {
 
     const computer = ["r", "p", "s"];
 
-    // Comprueba si el dispositivo está orientado en modo horizontal o vertical
-
-    if (window.innerHeight > window.innerWidth) {
-      // Puntuación para dispositivos móviles en orientación vertical,
-      // navegadores de escritorio y tablets
-
-
-      text__victories = document.getElementById("score__victories");
-      text__draws = document.getElementById("score__draws");
-      text__defeats = document.getElementById("score__defeats");
-    }
-    else {
-      // Puntuación para dispositivos móviles en orientación horizontal
-
-      text__victories = document.getElementById("score__victoriesMP");
-      text__draws = document.getElementById("score__drawsMP");
-      text__defeats = document.getElementById("score__defeatsMP");
-    }
-
     switch (random__number) {
       case 0:
         computer[0];
@@ -103,6 +95,7 @@ function play__game() {
     if (user === computer[random__number]) {
       draws++;
       text__draws.innerHTML = draws;
+      text__drawsMP.innerHTML = draws;
       played = true;
       return; //No continua comprovando
     }
@@ -110,12 +103,14 @@ function play__game() {
     if (winner(user, computer[random__number])) {
       victories++;
       text__victories.innerHTML = victories;
+      text__victoriesMP.innerHTML = victories;
       played = true;
       return; //No continua comprovando
     }
 
     defeats++;
     text__defeats.innerHTML = defeats;
+    text__defeatsMP.innerHTML = defeats;
     played = true;
   } else { // Si ya hemos jugado
     //alert("Ya has jugado la partida, por favor reinicia el juego");
