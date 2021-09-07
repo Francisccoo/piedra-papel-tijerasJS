@@ -109,7 +109,7 @@
 
 /* iPad - LANDSCAPE */
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (min-width: 1024px) {
    
    header section:nth-of-type(3) {
     display: none !important;
@@ -129,13 +129,6 @@
     display: none !important;
   }
 
-  header section:nth-of-type(3) {
-    display: inline !important;
-  }
-}
-
-
-@media only screen and (min-width: 736px) {
   header section:nth-of-type(3) {
     display: inline !important;
   }
